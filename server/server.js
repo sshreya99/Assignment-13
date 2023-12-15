@@ -17,8 +17,8 @@ var Product = mongoose.model('product', {
     },
     id : Number
 });
-
-mongoose.connect(dbPath, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false}, (err) => {
+mongoose.set('strictQuery',false);
+mongoose.connect(dbPath,  (err) => {
     console.log("Mongodb connection", err);
 });
 
@@ -81,6 +81,6 @@ app.delete('/product/delete/:id', async (req, res) => {
 });
 
 
-app.listen(4000, () => {
-    console.log('Listening on 4000');
+app.listen(3000, () => {
+    console.log('Listening on 3000');
 });

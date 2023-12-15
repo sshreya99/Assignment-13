@@ -36,7 +36,6 @@ class Products extends Component {
     handleSave(product) {
 
         product.productid = new Date().getTime()
-        product.instock = true;
 
         /**
          * Set the new product to the state
